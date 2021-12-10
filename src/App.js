@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Character from "./components/Character";
+import styled from "styled-components";
+
+const StyledTitle = styled.h1`
+  font-size: 3rem;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -17,7 +22,6 @@ const App = () => {
     axios
       .get("https://swapi.dev/api/people")
       .then((resp) => {
-        console.log(resp.data);
         setCharacters(resp.data);
       })
       .catch((error) => {
@@ -27,8 +31,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      {/* <Character characters={characters} /> */}
+      <StyledTitle>
+        <h1 className="Header">React Wars</h1>
+      </StyledTitle>
       {characters.map((character) => {
         return <Character character={character} key={character.created} />;
       })}
