@@ -4,7 +4,7 @@ import axios from "axios";
 import Character from "./components/Character";
 import styled from "styled-components";
 
-const StyledTitle = styled.h1`
+const StyledTitle = styled.div`
   font-size: 3rem;
 `;
 
